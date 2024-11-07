@@ -1,15 +1,16 @@
 function hitungNilai() {
+  // Deklarasi konstanta untuk bobot nilai dan batas kelulusan
   const BOBOT_TUGAS = 0.3;
   const BOBOT_UTS = 0.3;
   const BOBOT_UAS = 0.4;
   const BATAS_KELULUSAN = 60;
 
-  // Ambil nilai dari input
+  // Mengambil nilai dari input pengguna pada form
   let nilaiTugas = parseFloat(document.getElementById("tugas").value);
   let nilaiUTS = parseFloat(document.getElementById("uts").value);
   let nilaiUAS = parseFloat(document.getElementById("uas").value);
 
-  // Validasi input
+  // Memvalidasi bahwa input adalah angka antara 0 dan 100
   if (
     isNaN(nilaiTugas) ||
     isNaN(nilaiUTS) ||
@@ -22,14 +23,14 @@ function hitungNilai() {
     nilaiUAS > 100
   ) {
     alert("Masukkan nilai antara 0 dan 100 untuk semua komponen.");
-    return;
+    return; // Menghentikan eksekusi jika ada nilai yang tidak valid
   }
 
-  // Hitung nilai rata-rata tertimbang
+  // Menghitung nilai akhir sebagai rata-rata tertimbang dari nilai Tugas, UTS, dan UAS
   let nilaiAkhir =
     nilaiTugas * BOBOT_TUGAS + nilaiUTS * BOBOT_UTS + nilaiUAS * BOBOT_UAS;
 
-  // Tentukan nilai huruf
+  // Menentukan nilai huruf berdasarkan rentang nilai akhir
   let nilaiHuruf;
   if (nilaiAkhir >= 90) {
     nilaiHuruf = "A";
@@ -43,10 +44,10 @@ function hitungNilai() {
     nilaiHuruf = "E";
   }
 
-  // Tentukan status lulus/gagal
+  // Menentukan status lulus atau gagal berdasarkan batas kelulusan
   let lulus = nilaiAkhir >= BATAS_KELULUSAN;
 
-  // Tampilkan hasil
+  // Menampilkan hasil perhitungan nilai akhir, nilai huruf, dan status lulus/gagal
   const hasilDiv = document.getElementById("hasil");
   hasilDiv.innerHTML = `
         <p>Nilai Akhir: ${nilaiAkhir.toFixed(2)}</p>
@@ -54,6 +55,6 @@ function hitungNilai() {
         <p>Status: ${lulus ? "Lulus" : "Gagal"}</p>
     `;
 
-  // Beri warna berdasarkan status
+  // Mengubah kelas CSS hasilDiv untuk memberi warna sesuai status kelulusan
   hasilDiv.className = "result-section " + (lulus ? "pass" : "fail");
 }

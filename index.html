@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalkulator Nilai Mahasiswa</title>
+    <!-- Menyertakan file CSS untuk mengatur tampilan halaman -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Container utama untuk seluruh konten aplikasi -->
     <div class="container">
+      <!-- Judul aplikasi -->
       <h1>Kalkulator Nilai Mahasiswa</h1>
+
+      <!-- Bagian untuk input nilai tugas, UTS, dan UAS -->
       <div class="input-section">
+        <!-- Input untuk nilai tugas -->
         <div>
           <label for="tugas">Nilai Tugas (30%)</label>
           <input
@@ -21,6 +27,7 @@
           />
         </div>
 
+        <!-- Input untuk nilai UTS -->
         <div>
           <label for="uts">Nilai UTS (30%)</label>
           <input
@@ -32,6 +39,7 @@
           />
         </div>
 
+        <!-- Input untuk nilai UAS -->
         <div>
           <label for="uas">Nilai UAS (40%)</label>
           <input
@@ -43,14 +51,17 @@
           />
         </div>
 
+        <!-- Tombol untuk menghitung nilai akhir -->
         <button onclick="hitungNilai()">Hitung Nilai</button>
       </div>
 
+      <!-- Bagian ini akan menampilkan hasil perhitungan -->
       <div id="hasil" class="result-section">
-        <!-- Hasil perhitungan akan ditampilkan di sini -->
+        <!-- Hasil perhitungan akan muncul di sini setelah tombol diklik -->
       </div>
     </div>
 
+    <!-- Menyertakan file JavaScript yang berisi fungsi hitungNilai() -->
     <script src="js/script.js"></script>
   </body>
 </html>
