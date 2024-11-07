@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Nilai Mahasiswa</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Kalkulator Nilai Mahasiswa</h1>
+      <div class="input-section">
+        <div>
+          <label for="tugas">Nilai Tugas (30%)</label>
+          <input
+            type="number"
+            id="tugas"
+            placeholder="Masukkan nilai tugas"
+            min="0"
+            max="100"
+          />
+        </div>
+
+        <div>
+          <label for="uts">Nilai UTS (30%)</label>
+          <input
+            type="number"
+            id="uts"
+            placeholder="Masukkan nilai UTS"
+            min="0"
+            max="100"
+          />
+        </div>
+
+        <div>
+          <label for="uas">Nilai UAS (40%)</label>
+          <input
+            type="number"
+            id="uas"
+            placeholder="Masukkan nilai UAS"
+            min="0"
+            max="100"
+          />
+        </div>
+
+        <button onclick="hitungNilai()">Hitung Nilai</button>
+      </div>
+
+      <div id="hasil" class="result-section">
+        <!-- Hasil perhitungan akan ditampilkan di sini -->
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
